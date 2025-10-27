@@ -32,7 +32,6 @@ CREATE TABLE Train_Reservations (
 );
 
 
-
 INSERT INTO Train_Schedule 
 (Train_No, Train_Name, Departure_Time, Arrival_Time, Source_Station, Destination, Train_Type, Days_Operating)
 VALUES
@@ -77,6 +76,21 @@ VALUES
 (14512, 'David Lee', 'H1-7', 'Cancelled', '2023-10-10'),
 (22006, 'Sophia Taylor', 'I1-8', 'Confirmed', '2023-10-14');
 
+-- Data Cleaning
+-- step : 1
+SET SQL_SAFE_UPDATES = 0 ;
+
+-- step : 2 Deleting rows where values is NULL
+DELETE FROM Train_Schedule
+WHERE Train_No IS NULL OR
+	Train_Name IS NULL OR 
+    Departure_Time IS NULL OR 
+    Arrival_Time IS NULL OR  
+    Source_Station IS NULL OR 
+    Destination IS NULL OR 
+    Train_Type IS NULL OR 
+    Days_Operating IS NULL ;
+
 
 -- Q.1 Select all data from table Train_Schedule. 
 SELECT * FROM Train_Schedule ;
@@ -100,3 +114,41 @@ WHERE Days_Operating = "Daily" ;
 SELECT MIN(Departure_Time) AS Earliest_departure
 FROM Train_Schedule
 WHERE Source_Station = "Patna" ;
+
+
+-- Intermediate Question
+-- Q.1 Write a query to find the train names, passenger names, and booking statuses of all reservations 
+-- where the booking status is “Confirmed” and the train operates daily.
+SELECT
+	S.Train_Name AS Train_Name,
+    R.Passenger_Name AS Passenger_Name,
+    R.Booking_Status AS Booking_Status
+FROM Train_Schedule AS S
+RIGHT JOIN Train_Reservations AS R 
+ON S.Train_No = R.Train_No 
+WHERE R.Booking_Status = "Confirmed" AND S.Days_Operating = "Daily" ;
+
+-- Q.2 Write a query to find the train names, passenger names, and seat numbers of all reservations where the 
+-- booking status is either “Confirmed” or “Pending”, but the train type is not “Superfast”.
+SELECT
+	S.Train_Name AS Train_Name ,
+    R.Passenger_Name AS Passenger_Name ,
+    R.Seat_No AS Seat_No
+FROM Train_Schedule AS S
+INNER JOIN Train_Reservations AS R
+ON S.Train_No = R.Train_No
+WHERE R.Booking_Status IN ("Confirmed" , "Pending") 
+	AND S.Train_Type != "Superfast" ;
+    
+-- Q.3 Write a query to find the total number of confirmed reservations for each train, along with the train name 
+-- and train type, where the train operates on Mondays.
+SELECT
+    S.Train_Name AS Train_Name ,
+    S.Train_Type AS Train_Type ,
+    COUNT(*) AS Total_Confirmed_Reservation 
+FROM Train_Schedule AS S
+INNER JOIN Train_Reservations AS R
+ON S.Train_No = R.Train_No
+WHERE ( S.Days_Operating LIKE "%Mon%" ) 
+	AND R.Booking_Status = "Confirmed"
+GROUP BY Train_Name , Train_Type ;
