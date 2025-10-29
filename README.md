@@ -14,8 +14,8 @@ queries for train schedules, stations, and reservations.</p>
 </ul>
 <br>
 
-**Database Structure**
-  **TrainSchedule**
+**DATABASE STRUCTURE**
+<ul><li>TrainSchedule
 <ul>
 <li>TrainNo (INT, Primary Key)</li>
 <li>TrainName (VARCHAR, Unique)</li>
@@ -26,3 +26,19 @@ queries for train schedules, stations, and reservations.</p>
 <li>TrainType (VARCHAR)</li>
 <li>DaysOperating (VARCHAR)</li>
 </ul>
+</ul>
+
+**REQUIREMENTS**
+<ul>
+<li>MySQL or compatible RDBMS</li>
+</ul>
+
+**HOW TO RUN**
+<ol>
+<li>Import the .sql file to your MySQL server.</li>
+<li>Use the provided table definitions and sample data.</li>
+<li>Execute queries for analysis and exploration.</li>
+</ol>
+
+**AUTHOR**
+Reejul Kumar
