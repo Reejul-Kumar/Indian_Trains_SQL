@@ -15,7 +15,7 @@ queries for train schedules, stations, and reservations.</p>
 <br>
 
 **DATABASE STRUCTURE**
-<ul><li>TrainSchedule
+<ul><li>**TrainSchedule**</li>
 <ul>
 <li>TrainNo (INT, Primary Key)</li>
 <li>TrainName (VARCHAR, Unique)</li>
@@ -26,6 +26,10 @@ queries for train schedules, stations, and reservations.</p>
 <li>TrainType (VARCHAR)</li>
 <li>DaysOperating (VARCHAR)</li>
 </ul>
+<li>**Stations**</li>
+<li>StationID (INT, Primary Key, Auto Increment)</li>
+<li>StationName (VARCHAR)</li>
+<li>Location (VARCHAR)</li>
 </ul>
 
 **REQUIREMENTS**
@@ -41,4 +45,4 @@ queries for train schedules, stations, and reservations.</p>
 </ol>
 
 **AUTHOR**
-Reejul Kumar
+<p>Reejul Kumar</p>
