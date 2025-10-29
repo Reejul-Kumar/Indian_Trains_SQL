@@ -16,7 +16,7 @@ queries for train schedules, stations, and reservations.</p>
 
 **DATABASE STRUCTURE**
 <ul>
-  <li>**TrainSchedule**
+  <li><b>TrainSchedule</b>
     <ul>
       <li>TrainNo (INT, Primary Key)</li>
       <li>TrainName (VARCHAR, Unique)</li>
@@ -28,14 +28,14 @@ queries for train schedules, stations, and reservations.</p>
       <li>DaysOperating (VARCHAR)</li>
     </ul>
   </li>
-  <li>Stations
+  <li><b>Stations</b>
     <ul>
       <li>StationID (INT, Primary Key, Auto Increment)</li>
       <li>StationName (VARCHAR)</li>
       <li>Location (VARCHAR)</li>
     </ul>  
   </li>
-  <li>TrainReservations
+  <li><b>TrainReservations</b>
     <ul>
       <li>ReservationID (INT, Primary Key, Auto Increment)</li>
       <li>TrainNo (INT, Foreign Key)</li>
