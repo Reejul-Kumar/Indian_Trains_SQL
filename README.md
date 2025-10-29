@@ -4,7 +4,7 @@
 core data operations for Indian Railways. It provides database tables, sample data, and common
 queries for train schedules, stations, and reservations.</p>
 
-**Features**
+**FEATURES**
 <ul>
 <li>Train schedule management (details, timings, stations, types) </li>
 <li>Station information storage </li>
@@ -15,12 +15,14 @@ queries for train schedules, stations, and reservations.</p>
 <br>
 
 **Database Structure**
-TrainSchedule
-TrainNo (INT, Primary Key)
-TrainName (VARCHAR, Unique)
-DepartureTime (TIME)
-ArrivalTime (TIME)
-SourceStation (VARCHAR)
-Destination (VARCHAR)
-TrainType (VARCHAR)
-DaysOperating (VARCHAR)
+  **TrainSchedule**
+<ul>
+<li>TrainNo (INT, Primary Key)</li>
+<li>TrainName (VARCHAR, Unique)</li>
+<li>DepartureTime (TIME)</li>
+<li>ArrivalTime (TIME)</li>
+<li>SourceStation (VARCHAR)</li>
+<li>Destination (VARCHAR)</li>
+<li>TrainType (VARCHAR)</li>
+<li>DaysOperating (VARCHAR)</li>
+</ul>
