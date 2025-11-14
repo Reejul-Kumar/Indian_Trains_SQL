@@ -55,4 +55,4 @@ queries for train schedules, stations, and reservations.</p>
 </ol>
 
 **AUTHOR**
-<p>~~Reejul Kumar~~</p>
+<p>Reejul Kumar</p>
